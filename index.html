@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ticības kuģis — draudze</title>
-  <meta name="description" content="Ticības kuģis — draudze, kurā ikviens ir laipni gaidīts. Dievkalpojumu laiki, adrese un kontakti.">
+  <title>Ticības Kuģis — draudze</title>
+  <meta name="description" content="Ticības Kuģis — draudze Viļānos, kurā ikviens ir laipni gaidīts. Dievkalpojumi katru sestdienu plkst. 17:30, Ziedu ielā 2b-11.">
 
   <!-- Kā izskatīsies, kad saiti kopīgos Facebook / WhatsApp -->
-  <meta property="og:title" content="Ticības kuģis">
-  <meta property="og:description" content="Draudze, kurā ikviens ir laipni gaidīts. Dievkalpojumi katru svētdienu.">
+  <meta property="og:title" content="Ticības Kuģis">
+  <meta property="og:description" content="Draudze Viļānos, kurā ikviens ir laipni gaidīts. Dievkalpojumi katru sestdienu plkst. 17:30.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ticibaskugis.lv/">
 
@@ -64,16 +64,26 @@
       padding-top: 2.5rem;
     }
 
-    .mark { width: 4.5rem; height: auto; display: block; }
 
+
+
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.9rem, 4vw, 1.5rem);
+      margin: 0.5rem 0 1.6rem;
+    }
+    .mark { width: clamp(5.5rem, 26vw, 8.75rem); height: auto; flex: none; display: block; }
     .hero h1 {
       font-family: var(--slab);
       font-weight: 700;
-      font-size: clamp(3.25rem, 15vw, 6rem);
-      line-height: 0.92;
-      letter-spacing: -0.015em;
-      margin: 1.25rem 0 1.25rem;
+      font-size: clamp(2.8rem, 13vw, 5.25rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      margin: 0;
     }
+    .hero h1 span { display: block; }
 
     .hero .lead {
       font-size: 1.3rem;
@@ -109,32 +119,11 @@
       margin-top: 2.75rem;
     }
 
-    /* ---------- Pasākums ---------- */
-    .event {
-      background: var(--lantern);
-      border-radius: 6px;
-      padding: 1.5rem 1.5rem 1.6rem;
-      margin: 0.5rem 0 0;
-    }
-    .event .date {
-      font-family: var(--slab);
-      font-weight: 600;
-      font-size: 1.15rem;
-      margin: 0;
-    }
-    .event h2 {
-      font-family: var(--slab);
-      font-weight: 700;
-      font-size: clamp(2rem, 8vw, 2.6rem);
-      line-height: 1.05;
-      margin: 0.25rem 0 0.75rem;
-    }
-    .event p { margin: 0; }
-
     /* ---------- Sadaļas ---------- */
     section.block {
       padding: 2.75rem 0 0;
     }
+    main > section.block:first-child { padding-top: 1.25rem; }
     section.block h2 {
       font-family: var(--slab);
       font-weight: 700;
@@ -149,7 +138,8 @@
     }
     .times > div {
       display: grid;
-      grid-template-columns: 9.5rem 1fr;
+      grid-template-columns: 12rem 1fr;
+      align-items: baseline;
       gap: 0.25rem 1rem;
       padding: 0.9rem 0;
       border-bottom: 1px solid var(--line);
@@ -162,24 +152,59 @@
       font-size: 1.35rem;
       margin-right: 0.5rem;
     }
-    .note { color: var(--harbour); margin: 0.9rem 0 0; }
+    .times .what {
+      font-family: var(--slab);
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-right: 0.5rem;
+    }
+    .times .sub { color: var(--harbour); }
 
     address { font-style: normal; font-size: 1.25rem; margin: 0 0 0.6rem; }
     .maplink { font-weight: 700; color: var(--harbour); }
 
-    .contacts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-    .contacts li {
-      display: grid;
-      grid-template-columns: 9.5rem 1fr;
-      gap: 0.25rem 1rem;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--line);
+
+    .place { display: flex; align-items: flex-start; gap: 1rem; }
+    .pin { width: 2.4rem; height: auto; flex: none; color: var(--harbour); margin-top: 0.35rem; }
+    .place address {
+      font-family: var(--slab);
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height: 1.2;
+      margin: 0 0 0.7rem;
     }
-    .contacts span { font-weight: 700; }
-    .contacts a { color: var(--harbour); font-weight: 700; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .place address span { display: block; }
+    .place .maplink {
+      color: var(--sea);
+      font-weight: 700;
+      font-size: 1rem;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--lantern);
+      text-decoration-thickness: 2px;
+    }
+
+    .ask { margin: 0 0 1rem; max-width: 34rem; }
+    .phone {
+      display: inline-block;
+      font-family: var(--slab);
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: var(--sea);
+      text-decoration-color: var(--lantern);
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+    }
+    .reach { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    .email {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--harbour);
+      text-underline-offset: 4px;
+      overflow-wrap: anywhere;
+    }
 
     @media (max-width: 30rem) {
-      .times > div, .contacts li { grid-template-columns: 1fr; }
+      .times > div { grid-template-columns: 1fr; }
     }
 
     /* ---------- Kājene ---------- */
@@ -197,17 +222,17 @@
 
   <header class="hero">
     <div class="wrap">
-      <svg class="mark" viewBox="0 0 72 56" aria-hidden="true">
-        <path d="M36 4v38M29 12h14" stroke="#EEF1F2" stroke-width="3" stroke-linecap="round"/>
-        <path d="M39 18l17 22H39z" fill="#F0A93B"/>
-        <path d="M6 44h60l-9 10H15z" fill="#EEF1F2"/>
-      </svg>
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 72 56" aria-hidden="true">
+          <path d="M36 4v38M29 12h14" stroke="#EEF1F2" stroke-width="3" stroke-linecap="round"/>
+          <path d="M39 18l17 22H39z" fill="#F0A93B"/>
+          <path d="M6 44h60l-9 10H15z" fill="#EEF1F2"/>
+        </svg>
+        <h1><span>Ticības</span> <span>Kuģis</span></h1>
+      </div>
 
-      <h1>Ticības kuģis</h1>
-
-      <p class="lead">Draudze, kurā ikviens ir laipni gaidīts.</p>
-      <!-- MAINĪT: dievkalpojuma laiks -->
-      <p class="when">Dievkalpojumi katru svētdienu plkst.&nbsp;11:00</p>
+      <p class="lead">Draudze Viļānos, kurā ikviens ir laipni gaidīts.</p>
+      <p class="when">Dievkalpojumi katru sestdienu plkst.&nbsp;17:30</p>
 
       <div class="actions">
         <a class="btn btn-primary" href="#kur">Kā mūs atrast</a>
@@ -222,51 +247,54 @@
 
   <main class="wrap">
 
-    <!-- MAINĪT: pasākuma nosaukums, laiks, vieta, apraksts. Pēc pasākuma šo bloku var izdzēst. -->
-    <article class="event" aria-labelledby="event-title">
-      <p class="date">Sestdien, 31. oktobrī, plkst. 17:00</p>
-      <h2 id="event-title">Helovīna pasākums</h2>
-      <p>Aicinām ģimenes ar bērniem, draugus un kaimiņus. Sāksim pie baznīcas. Dalība bez maksas.</p>
-    </article>
-
     <section class="block" aria-labelledby="laiki">
-      <h2 id="laiki">Dievkalpojumi</h2>
-      <!-- MAINĪT: dienas un laiki -->
+      <h2 id="laiki">Kad mēs tiekamies</h2>
       <dl class="times">
         <div>
-          <dt>Svētdienās</dt>
-          <dd><span class="hour">11:00</span>Dievkalpojums</dd>
+          <dt>Sestdienās</dt>
+          <dd><span class="hour">17:30</span>Dievkalpojums</dd>
         </div>
         <div>
           <dt>Trešdienās</dt>
-          <dd><span class="hour">18:30</span>Bībeles stunda</dd>
+          <dd><span class="hour">10:00</span>Lūgšanu sapulce</dd>
+        </div>
+        <div>
+          <dt>Katra mēneša 2.&nbsp;svētdienā</dt>
+          <dd><span class="what">Hotdogi tirgū</span><span class="sub">Nāc, iepazīsimies!</span></dd>
         </div>
       </dl>
-      <p class="note">Pēc dievkalpojuma paliekam uz tēju un sarunām.</p>
     </section>
 
     <section class="block" id="kur" aria-labelledby="kur-virsraksts">
       <h2 id="kur-virsraksts">Kur mūs atrast</h2>
-      <!-- MAINĪT: adrese (gan tekstā, gan kartes saitē) -->
-      <address>Iela 1, Pilsēta, LV-0000</address>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Iela+1,+Pilsēta,+Latvija" target="_blank" rel="noopener">Atvērt kartē</a>
+      <div class="place">
+        <svg class="pin" viewBox="182 272 192 252" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="278" cy="298" r="15"/>
+          <path d="M278 313V512M231 358h95"/>
+          <path d="M201 470a88 88 0 0 0 154 0"/>
+          <path d="M193 483l7-24 22 12M363 483l-7-24-22 12"/>
+        </svg>
+        <div>
+          <address><span>Ziedu iela 2b-11</span> <span>Viļāni</span></address>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ziedu+iela+2B,+Vi%C4%BC%C4%81ni,+Latvija" target="_blank" rel="noopener">Atvērt kartē</a>
+        </div>
+      </div>
     </section>
 
     <section class="block" id="kontakti" aria-labelledby="kontakti-virsraksts">
-      <h2 id="kontakti-virsraksts">Kontakti</h2>
-      <!-- MAINĪT: tālrunis, e-pasts, Facebook saite -->
-      <ul class="contacts">
-        <li><span>Tālrunis</span><a href="tel:+37120000000">+371 20 000 000</a></li>
-        <li><span>E-pasts</span><a href="mailto:info@ticibaskugis.lv">info@ticibaskugis.lv</a></li>
-        <li><span>Facebook</span><a href="https://www.facebook.com/" target="_blank" rel="noopener">Ticības kuģis</a></li>
-      </ul>
+      <h2 id="kontakti-virsraksts">Sazinies ar mums</h2>
+      <p class="ask">Ja tev ir jautājumi par ticību vai draudzi vai ja vienkārši gribi aprunāties, droši zvani, sūti īsziņu vai raksti e-pastu. Mēs labprāt atbildēsim!</p>
+      <div class="reach">
+        <a class="phone" href="tel:+37124904140">+371 24904140</a>
+        <a class="email" href="mailto:ezaurins@pm.me">ezaurins@pm.me</a>
+      </div>
     </section>
 
   </main>
 
   <footer>
     <div class="wrap">
-      <p>Ticības kuģis, 2026</p>
+      <p>Ticības Kuģis, 2026</p>
     </div>
   </footer>
 
